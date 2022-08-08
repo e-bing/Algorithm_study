@@ -2,8 +2,8 @@ def hanoi(start, dest, n):
     if n == 1: # 종료조건
         print(start, dest)
         return
-    print(start, dest) # 이번 원반의 이동을 표시
     hanoi(start, 6-start-dest, n-1) # 다음 원반을 다른 기둥으로 이동
+    print(start, dest) # 이번 원반의 이동을 표시
     hanoi(6-start-dest, dest, n-1) # 다 됐으면 다른 기둥에 있는 거 다시 옮겨오기
 
 num = int(input()) # 원판의 개수 N
