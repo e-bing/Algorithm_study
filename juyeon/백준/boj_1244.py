@@ -36,9 +36,11 @@ for student in range(students_number):
 # 먼저 임의의 변수 x, y를 만들어줌. 숫자를 담을 것이기에 임의로 정수 0 값을 넣어줌.
     elif gender == '2':
         x, y = 0, 0
+
 # 학생이 받은 값에 -1을 해야 기준이 되는 스위치의 인덱스에 접근할 수 있으므로 (학생이 받은 값 - 1)한 값을 저장한 변수 num을 만들어줌 
         num = number - 1
         n = 1
+        
 # while문 용 변수 n을 만들어준 후, while문을 지정해줌.
 # 만약 num - n이 0 이하가 되거나, num + n 값이 T - 1(switch_status 인덱스 최고값)이 될 시 while문에서 나가도록 break문을 작성함.
         while True:
@@ -49,6 +51,7 @@ for student in range(students_number):
             elif switch_status[num - n] == switch_status[num + n]:
                 x, y = num - n, num + n
                 n += 1
+
 # 좌우 대칭 값이 일치하지 않는 시점에서 스위치를 추가로 변경해야 할 필요는 없어지므로 break로 빠져나옴.
             else:
                 break
