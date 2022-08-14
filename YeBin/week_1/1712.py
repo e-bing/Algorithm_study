@@ -1,3 +1,6 @@
+# BaekJoon 1712 손익분기점
+# 2022-08-07
+
 a, b, price = map(int, input().split())
 
 if b >= price:
