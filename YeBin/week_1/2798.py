@@ -1,3 +1,6 @@
+# BaekJoon 2798 블랙잭
+# 2022-08-08
+
 num, goal = map(int, input().split()) # 숫자의 개수, 목표 수 설정
 num_list = list(map(int, input().split())) # 입력된 수를 리스트로 만들어서 저장
 

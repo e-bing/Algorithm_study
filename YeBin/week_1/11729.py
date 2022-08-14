@@ -1,3 +1,6 @@
+# BaekJoon 11729 하노이 탑 이동 순서
+# 2022-08-07
+
 def hanoi(start, dest, n):
     if n == 1: # 종료조건
         print(start, dest)
@@ -9,4 +12,5 @@ def hanoi(start, dest, n):
 num = int(input()) # 원판의 개수 N
 print(2 ** num - 1) # 최소 수행횟수
 hanoi(1, 3, num) # 첫번째 기둥에서 세번째 기둥으로 이동
+
 
