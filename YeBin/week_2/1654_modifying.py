@@ -8,7 +8,8 @@ for i in range(K):
 start = 0
 end = sum(lan) // N
 cnt = 0
-while (start < end):
+mid = (start + end) // 2 + 1
+while (start < end - 1):
     mid = (start + end) // 2 + 1
     if mid == 0:
         mid = 1
@@ -20,5 +21,5 @@ while (start < end):
     elif cnt >= N:
         start = mid
 
-print(start, mid, end)
+print(mid)
 
