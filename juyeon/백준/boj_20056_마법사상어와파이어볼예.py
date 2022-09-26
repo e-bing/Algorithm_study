@@ -22,35 +22,36 @@ dj = [0, 0, 1, 1, 1, 0, -1, -1, -1]
 
 for k in range(K):
     space = [[list() for _ in range(N + 1)] for _ in range(N + 1)]
-    print(arr)
+
     while arr:    
         a = arr.popleft()
         if a[2] == 0:
             pass
         else:
             gothere = route[str(a[4])]
-            print(gothere)
+
             i, j = a[0] + (gothere[0] * a[3]) , a[1] + (gothere[1] * a[3])
-            
+            print(i, j)
             if N < i:
-                i -= N
+                i = i % N
             elif i == 0:
                 i = N
-            elif i < 1:
-                i = N - a[0] + 1
+            elif i < 0:
+                i += N
             if N < j:
-                j -= N
+                j = j % N
             elif j == 0:
                 j = N
-            elif j < 1:
-                j = N - a[1] + 1
+            elif j < 0:
+                j += N
 
             print(i, j)
             space[i][j].append([a[2], a[3], a[4]])
 
-    print(space)
-    for x in range(1, N + 1):
-        for y in range(1, N + 1):
+
+    for x in range(N + 1):
+        for y in range(N + 1):
+            print(x, y)
             fireballs = space[x][y]
             if len(fireballs) == 0:
                 pass
@@ -64,7 +65,7 @@ for k in range(K):
                 for fireball in fireballs:
                     mass += fireball[0]
                     speed += fireball[1]
-                    check = (fireball[2] % 2)
+                    check += (fireball[2] % 2)
 
                 mass, speed = (mass // 5), (speed // len(fireballs))
 
@@ -74,8 +75,7 @@ for k in range(K):
                 for i in range(4):
                     arr.append([x, y, mass, speed, reroute[i]])
     
-        
-print(arr)
+
 total = 0
 for a in arr:
     total += a[2]
